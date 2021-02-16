@@ -9,7 +9,7 @@ pdflatex -halt-on-error shin # compile latex
 for f in shin jrnl conf tech invt pres # compile bibtex
 do
     bibtex $f 
-    sed -i 's/S.~Shin/{\\bf S.~Shin}/g' $f.bbl &>> $BASEDIR/build.log # bold my name
+    sed -i 's/S.~Shin/{\\bf S.~Shin}/g' $f.bbl # bold my name
 done
 pdflatex -halt-on-error shin # compile with bibtex
 pdflatex -halt-on-error shin # compile again
@@ -26,5 +26,5 @@ sed -i 's/\[</\[J</g' pub/jrnl.html
 sed -i 's/\[</\[C</g' pub/conf.html
 sed -i 's/\[</\[B</g' pub/tech.html
 
-rm -f tex/.log tex/*.aux tex/*.blg tex/*.out tex/*.bbl tex/*.log*
+rm -f tex/.log tex/*.aux tex/*.blg tex/*.out tex/*.bbl tex/*.log tex/.log*
 cd $PWD
