@@ -1,42 +1,13 @@
 <!DOCTYPE html>
 
 <html>
-  <script>
-    function includeHTML() {
-	var z, i, elmnt, file, xhttp;
-	/*loop through a collection of all HTML elements:*/
-	z = document.getElementsByTagName("*");
-	for (i = 0; i < z.length; i++) {
-	    elmnt = z[i];
-	    /*search for elements with a certain atrribute:*/
-	    file = elmnt.getAttribute("include-html");
-	    if (file) {
-		/*make an HTTP request using the attribute value as the file name:*/
-		xhttp = new XMLHttpRequest();
-		xhttp.onreadystatechange = function() {
-		    if (this.readyState == 4) {
-			if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-			if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-			/*remove the attribute, and call this function once more:*/
-			elmnt.removeAttribute("include-html");
-			includeHTML();
-		    }
-		}
-		xhttp.open("GET", file, true);
-		xhttp.send();
-		/*exit the function:*/
-		return;
-	    }
-	}
-    };
-  </script>
   <head>
     <title>Sungho Shin</title>
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="favicon.ico" type="/favicon.ico"/>
-    <link rel="shortcut icon" href="favicon.ico" type="/favicon.ico"/>
-      </head>
+    <link rel="icon" href="img/favicon.ico" type="img/favicon.ico"/>
+    <link rel="shortcut icon" href="img/favicon.ico" type="img/favicon.ico"/>
+  </head>
   <body>
     <div class="header">
       <p>
@@ -109,11 +80,11 @@
       <div class="content">
       	<h2 id="pub"  style="padding-top: 50px; margin-top: -50px">Publications</h2>
       	<h3>Journal Publications:</h3>
-	<div include-html="jrnl.html"></div>
+	<div include-html="pub/jrnl.html"></div>
       	<h3>Conference Publications:</h3>
-	<div include-html="conf.html"></div>
+	<div include-html="pub/conf.html"></div>
       	<h3>Book Chapters and Technical Reports:</h3>
-	<div include-html="tech.html"></div>
+	<div include-html="pub/tech.html"></div>
 	<div class="footer">
 	  <p><i>Last updated: <span id="demo"></span>.</i></p>
 	</div>
@@ -125,8 +96,35 @@
     var modiDate = new Date(document.lastModified);
     var showAs = months[(modiDate.getMonth())] + " " + modiDate.getDate() + ", " + modiDate.getFullYear();
     document.getElementById("demo").innerHTML = showAs;
-  </script>
-  <script>
+
+    function includeHTML() {
+	var z, i, elmnt, file, xhttp;
+	/*loop through a collection of all HTML elements:*/
+	z = document.getElementsByTagName("*");
+	for (i = 0; i < z.length; i++) {
+	    elmnt = z[i];
+	    /*search for elements with a certain atrribute:*/
+	    file = elmnt.getAttribute("include-html");
+	    if (file) {
+		/*make an HTTP request using the attribute value as the file name:*/
+		xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+		    if (this.readyState == 4) {
+			if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+			if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+			/*remove the attribute, and call this function once more:*/
+			elmnt.removeAttribute("include-html");
+			includeHTML();
+		    }
+		}
+		xhttp.open("GET", file, true);
+		xhttp.send();
+		/*exit the function:*/
+		return;
+	    }
+	}
+    };
+    
     includeHTML();
   </script>
 </html>
