@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html>
+  <script>
+    function includeHTML() {
+	var z, i, elmnt, file, xhttp;
+	/*loop through a collection of all HTML elements:*/
+	z = document.getElementsByTagName("*");
+	for (i = 0; i < z.length; i++) {
+	    elmnt = z[i];
+	    /*search for elements with a certain atrribute:*/
+	    file = elmnt.getAttribute("include-html");
+	    if (file) {
+		/*make an HTTP request using the attribute value as the file name:*/
+		xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+		    if (this.readyState == 4) {
+			if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+			if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+			/*remove the attribute, and call this function once more:*/
+			elmnt.removeAttribute("include-html");
+			includeHTML();
+		    }
+		}
+		xhttp.open("GET", file, true);
+		xhttp.send();
+		/*exit the function:*/
+		return;
+	    }
+	}
+    };
+  </script>
+  <head>
+    <title>Sungho Shin</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="/favicon.ico"/>
+    <link rel="shortcut icon" href="favicon.ico" type="/favicon.ico"/>
+      </head>
+  <body>
+    <div class="header">
+      <p>
+	<strong><a class="nodecor" href="">Sungho Shin</a></strong> |
+	<a href="#bio">Bio</a> |
+	<a href="#pub">Publications</a> |
+	<a href="shin.pdf">CV</a>
+      </p>
+    </div>
+    <div class="wrapper">
+      <div class="full">
+	<div class="left">
+      	  <img class="profile-picture" src="img/shin.jpg">
+	</div>
+	<div class="right">
+      	  <h1>Sungho Shin</h1>
+	  <p>Ph.D. Candidate (Advisor: <a href="http://zavalab.engr.wisc.edu">Victor M. Zavala</a>)</p>
+	  <p>
+	    Department of Chemical and Biological Engineering, University of Wisconsin-Madison
+	  </p>
+	  <p>
+	    Address: 2011 Engineering Hall, 1415 Engineering Drive, Madison, WI 53706, USA
+	  </p>
+	  <p>
+	    Email: firstname (dot) lastname (at) wisc (dot) edu
+	  </p>
+	  <ul>
+	    <li>
+	      <a href="https://scholar.google.com/citations?user=_KaTyEwAAAAJ">
+		Google Scholar
+	      </a>
+	    </li>
+	    <li>
+	      <a href="https://github.com/sshin23">
+		Github
+	      </a>
+	    </li>
+	    <li>
+	      <a href="https://twitter.com/SunghoShinSS">
+		Twitter
+	      </a>
+	    </li>
+	    <li>
+	      <a href="https://www.linkedin.com/in/sungho-shin-92665416a/">
+		LinkedIn
+	      </a>
+	    </li>
+	  </ul>
+	</div>
+      </div>
+      <div class="content">
+      	<h2 id="bio" style="padding-top: 50px; margin-top: -50px"> Bio </h2>
+      	<p>
+      	  I am currently a Ph.D. candidate in the Department of Chemical and Biological Engineering at the University of Wisconsin-Madison. Prior to joining UW-Madison, I was an undergraduate researcher at <a href="http://epel.snu.ac.kr/">Jong Min Lee</a>'s group at Seoul National University. I spent the 2020 Summer at Los Alamos National Laboratory (worked with <a href="https://www.coffrin.com/">Carleton Coffrin</a> and  <a href="https://kaarthiksundar.github.io/">Kaarthik Sundar</a>) and the 2018 Summer at Argonne National Laboratory (worked with <a href="https://www.mcs.anl.gov/~anitescu/">Mihai Anitescu</a>). My research interests include model predictive control and optimization algorithms (in particular, distributed algorithms for large-scale, nonlinear, continuous optimization problems), and their applications to large-scale energy infrastructures (such as natural gas and power networks). I am the main developer of structure-exploiting nonlinear optimization solver <a href="https://github.com/sshin23/MadNLP.jl">MadNLP.jl</a>. I was the winner of the 2020 AIChE Annual Meeting <a href="http://castdiv.org/StudentPresentationAward.htm"> CAST Directors’ Student Presentation Award</a> and a recipient of the Korea Presidential Fellowship, Kwanjeong Fellowship, and Grainger Wisconsin Distinguished Graduate Fellowship.</p>
+      </div>
+      <div class="content">
+      	<h2 id="edu" style="padding-top: 50px; margin-top: -50px">Education</h2>
+	<table>
+	  <tr>
+	    <td>
+	      Ph. D. in Chemical Engineering, University of Wisconsin-Madison (2021, Expected).
+	    </td>
+	  </tr>
+	  <tr>
+	    <td>
+	      B.S. in Mathematics and Chemical Engineering, Seoul National University (2016).
+	  </td></tr>
+	</table>
+      </div>
+      <div class="content">
+      	<h2 id="pub"  style="padding-top: 50px; margin-top: -50px">Publications</h2>
+      	<h3>Journal Publications:</h3>
+	<div include-html="jrnl.html"></div>
+      	<h3>Conference Publications:</h3>
+	<div include-html="conf.html"></div>
+      	<h3>Book Chapters and Technical Reports:</h3>
+	<div include-html="tech.html"></div>
+	<div class="footer">
+	  <p><i>Last updated: <span id="demo"></span>.</i></p>
+	</div>
+      </div>
+  </body>
+  <script>
+    var months = [ "January", "February", "March", "April", "May", "June",
+		   "July", "August", "September", "October", "November", "December" ];
+    var modiDate = new Date(document.lastModified);
+    var showAs = months[(modiDate.getMonth())] + " " + modiDate.getDate() + ", " + modiDate.getFullYear();
+    document.getElementById("demo").innerHTML = showAs;
+  </script>
+  <script>
+    includeHTML();
+  </script>
+</html>
