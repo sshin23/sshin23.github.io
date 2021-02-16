@@ -1,0 +1,30 @@
+#!/bin/bash
+
+PWD=$pwd
+BASEDIR=$(dirname "$0")
+
+# compile latex
+cd $BASEDIR/tex
+pdflatex -halt-on-error shin # compile latex
+for f in shin jrnl conf tech invt pres # compile bibtex
+do
+    bibtex $f 
+    sed -i 's/S.~Shin/{\\bf S.~Shin}/g' $f.bbl &>> $BASEDIR/build.log # bold my name
+done
+pdflatex -halt-on-error shin # compile with bibtex
+pdflatex -halt-on-error shin # compile again
+cd ..
+
+# create html files
+for f in jrnl conf tech
+do
+    bibtex2html -q -r -s abbrv -revkeys -nodoc -nofooter -nobibsource -o pub/$f tex/$f.bib
+    sed -i 's/\\_/_/g' pub/$f.html
+    sed -i 's/S.&nbsp;Shin/<strong>S. Shin<\/strong>/g' pub/$f.html
+done
+sed -i 's/\[</\[J</g' pub/jrnl.html
+sed -i 's/\[</\[C</g' pub/conf.html
+sed -i 's/\[</\[B</g' pub/tech.html
+
+rm -f tex/.log tex/*.aux tex/*.blg tex/*.out tex/*.bbl tex/*.log
+cd $PWD
