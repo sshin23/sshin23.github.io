@@ -13,6 +13,7 @@ do
 done
 pdflatex -halt-on-error shin # compile with bibtex
 pdflatex -halt-on-error shin # compile again
+mv shin.pdf ..
 cd ..
 
 # create html files
@@ -21,6 +22,8 @@ do
     bibtex2html -q -r -s abbrv -revkeys -nodoc -nofooter -nobibsource -o pub/$f tex/$f.bib
     sed -i 's/\\_/_/g' pub/$f.html
     sed -i 's/S.&nbsp;Shin/<strong>S. Shin<\/strong>/g' pub/$f.html
+    sed -i 's/\[<a name/\[<span name/g' pub/$f.html
+    sed -i 's/<\/a>\]/<\/span>\]/g' pub/$f.html
 done
 sed -i 's/\[</\[J</g' pub/jrnl.html
 sed -i 's/\[</\[C</g' pub/conf.html
