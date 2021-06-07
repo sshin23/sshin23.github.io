@@ -6,7 +6,7 @@ BASEDIR=$(dirname "$0")
 # compile latex
 cd $BASEDIR/tex
 pdflatex -halt-on-error shin # compile latex
-for f in shin jrnl conf tech invt pres # compile bibtex
+for f in shin thes jrnl conf tech invt pres # compile bibtex
 do
     bibtex $f 
     sed -i 's/S.~Shin/{\\bf S.~Shin}/g' $f.bbl # bold my name
@@ -17,14 +17,15 @@ mv shin.pdf ..
 cd ..
 
 # create html files
-for f in jrnl conf tech
+for f in thes jrnl conf tech
 do
-    bibtex2html -q -r -s abbrv -revkeys -nodoc -nofooter -nobibsource -o pub/$f tex/$f.bib
+    bibtex2html -nf youtube YouTube -nf preprint preprint -q -r -s abbrv -revkeys -nodoc -nofooter -nobibsource -o pub/$f tex/$f.bib
     sed -i 's/\\_/_/g' pub/$f.html
     sed -i 's/S.&nbsp;Shin/<strong>S. Shin<\/strong>/g' pub/$f.html
     sed -i 's/\[<a name/\[<span name/g' pub/$f.html
     sed -i 's/<\/a>\]/<\/span>\]/g' pub/$f.html
 done
+sed -i 's/\[</\[T</g' pub/thes.html
 sed -i 's/\[</\[J</g' pub/jrnl.html
 sed -i 's/\[</\[C</g' pub/conf.html
 sed -i 's/\[</\[B</g' pub/tech.html
