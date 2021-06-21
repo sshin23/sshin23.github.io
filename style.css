@@ -76,7 +76,7 @@ body {
 }
 
 a {
-    color: #9b0000;
+    color: #0083c7;
     text-decoration: none;
 }
 a:hover,
@@ -200,7 +200,7 @@ tbody.collapse.in {
 .dropdown-menu > .active > a:focus {
   color: #ffffff;
   text-decoration: none;
-  background-color: #9b0000;
+  background-color: #0083c7;
   outline: 0;
 }
 .dropdown-menu > .disabled > a,
@@ -306,7 +306,7 @@ tbody.collapse.in {
 .nav .open > a:hover,
 .nav .open > a:focus {
   background-color: #eeeeee;
-  border-color: #9b0000;
+  border-color: #0083c7;
 }
 .nav .nav-divider {
   height: 1px;
