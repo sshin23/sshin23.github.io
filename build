@@ -19,7 +19,7 @@ cd ..
 # create html files
 for f in thes jrnl conf tech
 do
-    bibtex2html -nf youtube YouTube -nf proquest ProQuest -nf preprint preprint -q -r -s abbrv -revkeys -nodoc -nofooter -nobibsource -o pub/$f tex/$f.bib
+    bibtex2html -nf pdf pdf -nf youtube YouTube -nf proquest ProQuest -nf preprint preprint -q -r -s abbrv -revkeys -nodoc -nofooter -nobibsource -o pub/$f tex/$f.bib
     sed -i 's/\\_/_/g' pub/$f.html
     sed -i 's/S.&nbsp;Shin/<strong>S. Shin<\/strong>/g' pub/$f.html
     sed -i 's/\[<a name/\[<span name/g' pub/$f.html
