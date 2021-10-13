@@ -730,18 +730,21 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 
 @media (prefers-color-scheme: dark) {
 		body{
-				background: #2b2d2e;
+				background: #3A3A3A;
 				color: #d2d8d9;
 		}
 		.navbar-default .navbar-brand {
 				color: #d2d8d9; 
 		}
 		.navbar-default{
-				background-color: #2b2d2e;
+				background-color: #3A3A3A;
 				border-color: #606060 ;
 		}
 		a {
-				color: #00b0f0;
+				color: #00c0f8;
+		}
+		.navbar-default .navbar-nav > li > a {
+				color: #999999;
 		}
 		.navbar-default .navbar-nav > li > a:hover {
 				color: white;
