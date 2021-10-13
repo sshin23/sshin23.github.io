@@ -629,7 +629,7 @@ tbody.collapse.in {
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
     color: black;
-  background-color: transparent;
+		background-color: transparent;
 }
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
@@ -742,6 +742,9 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 		}
 		a {
 				color: #00b0f0;
+		}
+		.navbar-default .navbar-nav > li > a:hover {
+				color: white;
 		}
 }
 
