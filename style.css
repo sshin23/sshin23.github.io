@@ -727,3 +727,21 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 .navbar-collapse:after {
   clear: both;
 }
+
+@media (prefers-color-scheme: dark) {
+		body{
+				background: #2b2d2e;
+				color: #d2d8d9;
+		}
+		.navbar-default .navbar-brand {
+				color: #d2d8d9; 
+		}
+		.navbar-default{
+				background-color: #2b2d2e;
+				border-color: #606060 ;
+		}
+		a {
+				color: #00b0f0;
+		}
+}
+
