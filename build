@@ -30,5 +30,11 @@ sed -i 's/\[</\[J</g' pub/jrnl.html
 sed -i 's/\[</\[C</g' pub/conf.html
 sed -i 's/\[</\[B</g' pub/tech.html
 
+sed -i 's/<sup>\*<\/sup>/\*/g' pub/thes.html
+sed -i 's/<sup>\*<\/sup>/\*/g' pub/jrnl.html
+sed -i 's/<sup>\*<\/sup>/\*/g' pub/conf.html
+sed -i 's/<sup>\*<\/sup>/\*/g' pub/tech.html
+
+
 rm -f tex/.log tex/*.aux tex/*.blg tex/*.out tex/*.bbl tex/*.log tex/.log*
 cd $PWD
