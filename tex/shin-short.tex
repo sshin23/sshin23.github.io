@@ -19,7 +19,7 @@
 
 %% bibliography with multiple entries
 \usepackage[resetlabels,labeled]{multibib}
-\newcites{thes,jrnl,conf,tech,invt,pres}{{ },{ },{ },{ },{ },{ }}
+\newcites{thes,jrnl,conf,invt}{{ },{ },{ },{ }}
 
 %% reverse numbering of bibliography
 \usepackage{etaremune,etoolbox}
@@ -36,28 +36,29 @@
 \patchcmd{\@lbibitem}{\item[\hfil\NAT@anchor{#2}{\NAT@num}]}{\item}{}{}
 \makeatother
 
+%% to shorten
+\usepackage{titlesec}
+\titlespacing*{\section}{0pt}{4pt}{4pt}
+\titlespacing*{\subsection}{0pt}{4pt}{4pt}
+
 \begin{document}
 \begin{center}
   {\bf\LARGE Sungho Shin}
 \end{center}
 \begin{center}
-  {Postdoctoral Appointee}\\
+  {Postdoctoral Appointee (email: \href{mailto:sshin@anl.gov}{sshin@anl.gov})}\\
   {Mathematics and Computer Science Division},\\
   {Argonne National Laboratory}\\
-  \href{mailto:sshin@anl.gov}{sshin@anl.gov}
 \end{center}
 
 \section*{Education}
-\begin{itemize}[leftmargin=*]
-\item[]{\bf Ph.D. in Chemical Engineering} (Sept. 2016 -- May 2021)\\
-  {\bf University of Wisconsin-Madison}, Madison, Wisconsin, USA. (Advisor: Victor M. Zavala)
-\item[]{\bf B.S. in Mathematics} and {\bf Chemical Engineering} (Mar. 2010 -- Feb. 2016$^*$)\\
-  {\bf Seoul National University}, Seoul, South Korea.\\
-  $^*$Military service in Republic of Korea Army (Apr. 2012 -- Jan. 2014).
+\begin{itemize}[leftmargin=*,itemsep=0em]
+\item[]{\bf Ph.D. in Chemical Engineering}, {\bf University of Wisconsin-Madison} (2021; Advisor: Victor M. Zavala)
+\item[]{\bf B.S. in Mathematics} and {\bf Chemical Engineering}, {\bf Seoul National University} (2016).
 \end{itemize}
 
 \section*{Professional Appointments}
-\begin{itemize}[leftmargin=*]
+\begin{itemize}[leftmargin=*,itemsep=0em]
 \item[] {\bf Postdoctoral Appointee} (June 2021 -- Present), Mathematics and Computer Science Division, Argonne National Laboratory. (Supervisor: Mihai Anitescu).
 \item[] {\bf Research Assistant} (Sept. 2016 -- May 2021), Department of Chemical and Biological Engineering, University of Wisconsin-Madison. (Supervisor: Victor M. Zavala).
 \item[] {\bf Research Intern} (June 2020 -- Sept. 2020), Advanced Network Science Initiative, Los Alamos National Laboratory. (Supervisor: Carleton Coffrin and Kaarthik Sundar).
@@ -66,7 +67,7 @@
 \end{itemize}
 
 \section*{Honors and Awards}
-\begin{itemize}[leftmargin=*]
+\begin{itemize}[leftmargin=*,itemsep=0em]
 \item[] {\bf IFAC NMPC Young Author Award} (July 2021).
 \item[] {\bf IFAC ADCHEM Young Author Award} (June 2021).
 \item[] {\bf AIChE CAST Directors' Student Presentation Award} (Nov. 2020).
@@ -91,56 +92,12 @@
 \nociteconf{*}
 \bibliographystyleconf{custom}
 \bibliographyconf{conf}
-\subsection*{Book Chapters, Technical Reports, and Others}
-\renewcommand*{\labelenumi}{[B\theenumi]}
-\nocitetech{*}
-\bibliographystyletech{custom}
-\bibliographytech{tech}
 
-\section*{Presentations}
-\subsection*{Invited Talks}
+\section*{Invited Talks}
 \renewcommand*{\labelenumi}{[I\theenumi]}
 \nociteinvt{*}
 \bibliographystyleinvt{custom}
 \bibliographyinvt{invt}
-\subsection*{Conference Talks}
-\renewcommand*{\labelenumi}{[P\theenumi]}
-\nocitepres{*}
-\bibliographystylepres{custom}
-\bibliographypres{pres}
 
-\section*{Software Products}
-\begin{itemize}[leftmargin=*]
-\item[] {\bf MadNLP.jl} (Main developer): a solver for nonlinear programming.
-\item[] {\bf Plasmo.jl} (Contributor): a graph-based algebraic modeling framework.
-\item[] {\bf SBML2Julia} (Contributor): a tool to for optimizing parameters of an ordinary differential equation (ODE) model in SBML format.
-\end{itemize}
-
-\section*{Teaching Experience}
-\begin{itemize}[leftmargin=*]
-\item[] {\bf Teaching Assistant}, Statistics for Chemical Engineers, UW-Madison (Spring 2019)
-\item[] {\bf Teaching Assistant}, Process Dynamics and Control, UW-Madison (Fall 2018, Fall 2017)
-\item[] {\bf Tutor}, Process Control and Design, Seoul National University (Fall 2015)
-\item[] {\bf Tutor}, Process Fluid Mechanics, Seoul National University (Spring 2015)
-\item[] {\bf Tutor}, Basic Chemistry, Seoul National University (Spring 2015)
-\end{itemize}
-
-\section*{Mentoring Experience}
-\begin{itemize}[leftmargin=*]
-\item[] Undergraduate: Sang-il Kwon (UW-Madison, Fall 2017)
-\end{itemize}
-
-\section*{Peer Review Services}
-\begin{itemize}[leftmargin=*]
-\item[] AIChE Journal, Automatica, Computers \& Chemical Engineering, IEEE Control Systems Letters, IEEE Transactions on Control Systems Technology, IEEE Transactions on Automatic Control, IFAC Conference on Nonlinear Model Predictive Control, IFAC International Symposium on Advanced Control of Chemical Processes, Industrial \& Engineering Chemistry Research, Journal of Optimization Theory and Applications, SIAM Journal on Optimization
-\end{itemize}
-
-\section*{Other Skills}
-\begin{itemize}[leftmargin=*]
-\item[] Language: English and Korean
-\item[] Programming: Julia, MATLAB, Python, C/C++
-\end{itemize}
-
-{\noindent\it Last updated: \today}
 
 \end{document}

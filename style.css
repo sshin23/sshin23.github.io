@@ -629,7 +629,7 @@ tbody.collapse.in {
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
     color: black;
-  background-color: transparent;
+		background-color: transparent;
 }
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
@@ -727,3 +727,27 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 .navbar-collapse:after {
   clear: both;
 }
+
+@media (prefers-color-scheme: dark) {
+		body{
+				background: #3A3A3A;
+				color: #d2d8d9;
+		}
+		.navbar-default .navbar-brand {
+				color: #d2d8d9; 
+		}
+		.navbar-default{
+				background-color: #3A3A3A;
+				border-color: #606060 ;
+		}
+		a {
+				color: #00c0f8;
+		}
+		.navbar-default .navbar-nav > li > a {
+				color: #999999;
+		}
+		.navbar-default .navbar-nav > li > a:hover {
+				color: white;
+		}
+}
+
