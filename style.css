@@ -66,7 +66,7 @@ tt {
     display: flex;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:620px) {
     .full {
 	flex-direction: column;
     }
@@ -267,7 +267,7 @@ tbody.collapse.in {
   bottom: 100%;
   margin-bottom: 2px;
 }
-@media (min-width: 768px) {
+@media (min-width: 620px) {
   .navbar-right .dropdown-menu {
     right: 0;
     left: auto;
@@ -364,12 +364,12 @@ tbody.collapse.in {
   margin-bottom: 20px;
   border: 1px solid transparent;
 }
-@media (min-width: 768px) {
+@media (min-width: 620px) {
   .navbar {
       border-radius: 4px;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 620px) {
   .navbar-header {
     float: left;
   }
@@ -386,7 +386,7 @@ tbody.collapse.in {
 .navbar-collapse.in {
   overflow-y: auto;
 }
-@media (min-width: 768px) {
+@media (min-width: 620px) {
   .navbar-collapse {
     width: auto;
     border-top: 0;
@@ -426,7 +426,7 @@ tbody.collapse.in {
     max-height: 200px;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 620px) {
   .navbar-fixed-top,
   .navbar-fixed-bottom {
     border-radius: 0;
@@ -448,7 +448,7 @@ tbody.collapse.in {
   margin-right: -15px;
   margin-left: -15px;
 }
-@media (min-width: 768px) {
+@media (min-width: 620px) {
   .container > .navbar-header,
   .container-fluid > .navbar-header,
   .container > .navbar-collapse,
@@ -461,7 +461,7 @@ tbody.collapse.in {
   z-index: 1000;
   border-width: 0 0 1px;
 }
-@media (min-width: 768px) {
+@media (min-width: 620px) {
   .navbar-static-top {
     border-radius: 0;
   }
@@ -481,7 +481,7 @@ tbody.collapse.in {
 .navbar-brand > img {
   display: block;
 }
-@media (min-width: 768px) {
+@media (min-width: 620px) {
   .navbar > .container .navbar-brand,
   .navbar > .container-fluid .navbar-brand {
     margin-left: -15px;
@@ -511,7 +511,7 @@ tbody.collapse.in {
 .navbar-toggle .icon-bar + .icon-bar {
   margin-top: 4px;
 }
-@media (min-width: 768px) {
+@media (min-width: 620px) {
   .navbar-toggle {
     display: none;
   }
@@ -547,7 +547,7 @@ tbody.collapse.in {
     background-image: none;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 620px) {
   .navbar-nav {
     float: left;
     margin: 0;
@@ -589,14 +589,14 @@ tbody.collapse.in {
   margin-top: 15px;
   margin-bottom: 15px;
 }
-@media (min-width: 768px) {
+@media (min-width: 620px) {
   .navbar-text {
     float: left;
     margin-right: 15px;
     margin-left: 15px;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 620px) {
   .navbar-left {
     float: left !important;
   }
