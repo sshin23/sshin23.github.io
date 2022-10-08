@@ -1,103 +1,84 @@
-\documentclass{article}
-\usepackage[utf8,applemac]{inputenc}
-\usepackage{etaremune}
-\usepackage{enumitem}
-\usepackage{times}
-\usepackage[numbers]{natbib}
-\usepackage{xcolor,color}
-\usepackage[hyphens]{url}
-\urlstyle{same}
-\usepackage[hyphenbreaks]{breakurl}
-\usepackage[colorlinks=true,linkcolor=myblue,citecolor=myblue,urlcolor=myblue]{hyperref}
-\definecolor{myblue}{RGB}{0,0,170} 
-\usepackage{geometry}
- \geometry{
- total={170mm,225mm},
- left=20mm,
- top=25mm,
-}
+\documentclass[letterpaper, 11pt]{article}
 
-%% bibliography with multiple entries
-\usepackage[resetlabels,labeled]{multibib}
-\newcites{thes,jrnl,conf,invt}{{ },{ },{ },{ }}
-
-%% reverse numbering of bibliography
-\usepackage{etaremune,etoolbox}
-\makeatletter
-\AtBeginDocument{
-  \renewenvironment{thebibliography}[1]
-  {
-    \begin{etaremune}[itemsep=0mm]
-      \let\citeN\cite\let\shortcite\cite\let\citeasnoun\cite}
-    {\bibitem@fin\bibpostamble
-      \def\@noitemerr{\PackageWarning{natbib}{Empty `thebibliography' environment}}%
-    \end{etaremune}}
-}
-\patchcmd{\@lbibitem}{\item[\hfil\NAT@anchor{#2}{\NAT@num}]}{\item}{}{}
-\makeatother
-
-%% to shorten
-\usepackage{titlesec}
-\titlespacing*{\section}{0pt}{4pt}{4pt}
-\titlespacing*{\subsection}{0pt}{4pt}{4pt}
+\input{preamble}
 
 \begin{document}
+\thispagestyle{empty}
 \begin{center}
-  {\bf\LARGE Sungho Shin}
+  {\bf\Large Sungho Shin}
 \end{center}
 \begin{center}
-  {Postdoctoral Appointee (email: \href{mailto:sshin@anl.gov}{sshin@anl.gov})}\\
-  {Mathematics and Computer Science Division},\\
-  {Argonne National Laboratory}\\
+  {Mathematics and Computer Science Division}, {Argonne National Laboratory}, Lemont, IL 60439\\
+  Email: \href{mailto:sshin@anl.gov}{sshin@anl.gov} $|$ Cell: \href{tel:16084485155}{+1 608 448 5155} $|$ Web: \href{https://sunghoshin.com}{sunghoshin.com} $|$ Twitter: \href{https://twitter.com/SunghoShinSS}{@SunghoShinSS} $|$ Github: \href{https://github.com/sshin23}{@sshin23}
 \end{center}
 
-\section*{Education}
+\subsection*{Education}
 \begin{itemize}[leftmargin=*,itemsep=0em]
-\item[]{\bf Ph.D. in Chemical Engineering}, {\bf University of Wisconsin-Madison} (2021; Advisor: Victor M. Zavala)
-\item[]{\bf B.S. in Mathematics} and {\bf Chemical Engineering}, {\bf Seoul National University} (2016).
+\item[]{\bf University of Wisconsin-Madison}, {Ph.D. in Chemical Engineering} (Advisor: Victor M. Zavala) \hfill 2021
+\item[]{\bf Seoul National University}, {B.S. in Mathematics} and {Chemical Engineering} \hfill 2016
 \end{itemize}
 
-\section*{Professional Appointments}
-\begin{itemize}[leftmargin=*,itemsep=0em]
-\item[] {\bf Postdoctoral Appointee} (June 2021 -- Present), Mathematics and Computer Science Division, Argonne National Laboratory. (Supervisor: Mihai Anitescu).
-\item[] {\bf Research Assistant} (Sept. 2016 -- May 2021), Department of Chemical and Biological Engineering, University of Wisconsin-Madison. (Supervisor: Victor M. Zavala).
-\item[] {\bf Research Intern} (June 2020 -- Sept. 2020), Advanced Network Science Initiative, Los Alamos National Laboratory. (Supervisor: Carleton Coffrin and Kaarthik Sundar).
-\item[] {\bf Research Intern} (May 2018 -- Aug. 2018), Mathematics and Computer Science Division, Argonne National Laboratory. (Supervisor: Mihai Anitescu).
-\item[] {\bf Research Intern} (Jan. 2016 -- June 2016), Energy Process Engineering Laboratory, Seoul National University. (Supervisor: Jong Min Lee).
+\subsection*{Research Interests}
+\begin{itemize}[leftmargin=*]
+\item[] control theory; model predictive control; nonlinear optimization; stochastic optimization; energy systems
 \end{itemize}
 
-\section*{Honors and Awards}
+\subsection*{Professional Appointments}
 \begin{itemize}[leftmargin=*,itemsep=0em]
-\item[] {\bf IFAC NMPC Young Author Award} (July 2021).
-\item[] {\bf IFAC ADCHEM Young Author Award} (June 2021).
-\item[] {\bf AIChE CAST Directors' Student Presentation Award} (Nov. 2020).
-\item[] {\bf Grainger Wisconsin Distinguished Graduate Fellowship} (Sept. 2020 -- June 2021).
-\item[] {\bf Kwanjeong Scholarship} (Sept. 2016 -- Aug. 2020).
-\item[] {\bf Korea Presidential Science Scholarship} (Mar. 2010 -- Feb. 2016).
+\item[] {\bf Postdoctoral Appointee} (Supervisor: Mihai Anitescu) \hfill 2021--Present\\
+  Mathematics and Computer Science Division, Argonne National Laboratory. 
+\item[] {\bf Research Assistant} (Supervisor: Victor M. Zavala) \hfill 2016--2021 \\
+  Department of Chemical and Biological Engineering, University of Wisconsin-Madison. 
+\item[] {\bf Research Intern} (Supervisor: Carleton Coffrin and Kaarthik Sundar) \hfill 2020\\
+  Advanced Network Science Initiative, Los Alamos National Laboratory. 
+\item[] {\bf Research Intern} (Supervisor: Mihai Anitescu) \hfill 2018 \\
+  Mathematics and Computer Science Division, Argonne National Laboratory.
+\item[] {\bf Research Intern} (Supervisor: Jong Min Lee) \hfill 2016 \\
+  Energy Process Engineering Laboratory, Seoul National University.
 \end{itemize}
 
-\section*{Publications}
-\subsection*{Thesis}
-\renewcommand*{\labelenumi}{[T\theenumi]}
-\nocitethes{*}
-\bibliographystylethes{custom}
-\bibliographythes{thes}
-\subsection*{Journal Publications}
+\subsection*{Honors and Awards}
+\begin{itemize}[leftmargin=*,itemsep=0em]
+\item[] {\bf IFAC NMPC Young Author Award} \hfill 2021
+\item[] {\bf IFAC ADCHEM Young Author Award} \hfill 2021
+\item[] {\bf AIChE CAST Directors' Student Presentation Award} \hfill 2020
+\item[] {\bf Grainger Wisconsin Distinguished Graduate Fellowship} \hfill 2020--2021
+\item[] {\bf Kwanjeong Scholarship} \hfill 2016--2020
+\item[] {\bf Korea Presidential Science Scholarship} \hfill 2010--2016
+\end{itemize}
+
+\let\OLDthebibliography\thebibliography
+\renewcommand\thebibliography[1]{
+  \OLDthebibliography{#1}
+  \setlength{\parskip}{0pt}
+  \setlength{\itemsep}{0pt}
+}
+
+\subsection*{Publications}
+% \subsubsection*{Thesis}
+% \renewcommand*{\labelenumi}{[T\theenumi]}
+% \nocitethes{*}
+\subsubsection*{Under Review}
+\renewcommand*{\labelenumi}{[U\theenumi]}
+\nociteundr{*}
+\bibliographystyleundr{custom}
+\bibliographyundr{undr}
+\subsubsection*{Journal Publications}
 \renewcommand*{\labelenumi}{[J\theenumi]}
 \nocitejrnl{*}
 \bibliographystylejrnl{custom}
 \bibliographyjrnl{jrnl}
-\subsection*{Conference Publications}
+\subsubsection*{Conference Publications}
 \renewcommand*{\labelenumi}{[C\theenumi]}
 \nociteconf{*}
 \bibliographystyleconf{custom}
 \bibliographyconf{conf}
 
-\section*{Invited Talks}
-\renewcommand*{\labelenumi}{[I\theenumi]}
-\nociteinvt{*}
-\bibliographystyleinvt{custom}
-\bibliographyinvt{invt}
+% \subsection*{Invited Talks}
+% \renewcommand*{\labelenumi}{[I\theenumi]}
+% \nociteinvt{*}
+% \bibliographystyleinvt{custom}
+% \bibliographyinvt{invt}
 
 
 \end{document}

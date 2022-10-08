@@ -6,7 +6,7 @@ BASEDIR=$(dirname "$0")
 # compile latex
 cd $BASEDIR/tex
 pdflatex -halt-on-error shin # compile latex
-for f in shin thes jrnl conf tech invt pres # compile bibtex
+for f in shin prep undr thes jrnl conf tech invt pres # compile bibtex
 do
     bibtex $f 
     sed -i 's/S.~Shin/{\\bf S.~Shin}/g' $f.bbl # bold my name
@@ -16,7 +16,7 @@ pdflatex -halt-on-error shin # compile again
 mv shin.pdf ..
 
 pdflatex -halt-on-error shin-short # compile latex
-for f in shin-short thes jrnl conf # compile bibtex
+for f in shin-short prep undr thes jrnl conf # compile bibtex
 do
     bibtex $f 
     sed -i 's/S.~Shin/{\\bf S.~Shin}/g' $f.bbl # bold my name
@@ -27,7 +27,7 @@ mv shin-short.pdf ..
 cd ..
 
 # create html files
-for f in thes jrnl conf tech
+for f in prep undr thes jrnl conf tech
 do
     bibtex2html -nf pdf pdf -nf youtube YouTube -nf proquest ProQuest -nf preprint preprint -q -r -s abbrv -revkeys -nodoc -nofooter -nobibsource -o pub/$f tex/$f.bib
     sed -i 's/\\_/_/g' pub/$f.html
@@ -35,11 +35,15 @@ do
     sed -i 's/\[<a name/\[<span name/g' pub/$f.html
     sed -i 's/<\/a>\]/<\/span>\]/g' pub/$f.html
 done
+sed -i 's/\[</\[T</g' pub/prep.html
+sed -i 's/\[</\[T</g' pub/undr.html
 sed -i 's/\[</\[T</g' pub/thes.html
 sed -i 's/\[</\[J</g' pub/jrnl.html
 sed -i 's/\[</\[C</g' pub/conf.html
 sed -i 's/\[</\[B</g' pub/tech.html
 
+sed -i 's/<sup>\*<\/sup>/\*/g' pub/prep.html
+sed -i 's/<sup>\*<\/sup>/\*/g' pub/undr.html
 sed -i 's/<sup>\*<\/sup>/\*/g' pub/thes.html
 sed -i 's/<sup>\*<\/sup>/\*/g' pub/jrnl.html
 sed -i 's/<sup>\*<\/sup>/\*/g' pub/conf.html
