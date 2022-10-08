@@ -35,8 +35,8 @@ do
     sed -i 's/\[<a name/\[<span name/g' pub/$f.html
     sed -i 's/<\/a>\]/<\/span>\]/g' pub/$f.html
 done
-sed -i 's/\[</\[T</g' pub/prep.html
-sed -i 's/\[</\[T</g' pub/undr.html
+sed -i 's/\[</\[P</g' pub/prep.html
+sed -i 's/\[</\[U</g' pub/undr.html
 sed -i 's/\[</\[T</g' pub/thes.html
 sed -i 's/\[</\[J</g' pub/jrnl.html
 sed -i 's/\[</\[C</g' pub/conf.html
