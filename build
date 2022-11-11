@@ -13,7 +13,7 @@ do
 done
 pdflatex -halt-on-error shin # compile with bibtex
 pdflatex -halt-on-error shin # compile again
-mv shin.pdf ..
+mv shin.pdf ../shin-full.pdf
 
 pdflatex -halt-on-error shin-short # compile latex
 for f in shin-short prep undr thes jrnl conf # compile bibtex
