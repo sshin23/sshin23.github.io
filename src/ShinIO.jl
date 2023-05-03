@@ -1,6 +1,6 @@
 module ShinIO
 
-using LiveServer, Markdown, Pandoc
+using LiveServer
 
 const content_dir = joinpath(@__DIR__, "..", "content")
 const template_dir = joinpath(@__DIR__, "..", "template")
@@ -27,7 +27,7 @@ const contents = [
 
 function cv()
     @info "building CV"
-    run(`$(joinpath(tex_dir,"build"))`)
+    run(`$(joinpath(tex_dir,"build-cv"))`)
 end
 
 function build(; build_cv = true)
@@ -150,7 +150,31 @@ function serve()
 end
 
 function deploy()
-    
+    # Define the repository URL and the branch to deploy to
+    repo_url = "git@github.com:sshin23/sshin23.github.io.git"
+    branch = "gh-pages"
+
+    # Define the build directory
+    build_dir = "build"
+
+    # Clone the repository into a temporary directory
+    tmp_dir = mktempdir()
+    run(`git clone --depth 1 --branch $branch $repo_url $tmp_dir`)
+
+    # Copy the contents of the build directory to the repository directory
+    for f in readdir(build_dir, join=true)
+        run(`cp -r $f $tmp_dir`)
+    end
+
+    # Commit and push the changes
+    cd(tmp_dir) do
+        run(`git add -A`)
+        run(`git commit -m "Deploy website"`)
+        run(`git push origin $branch`)
+    end
+
+    # Clean up the temporary directory
+    rm(tmp_dir; recursive=true)
 end
 
 end # module

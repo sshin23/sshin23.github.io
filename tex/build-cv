@@ -1,0 +1,19 @@
+#!/bin/bash
+
+PWD=$pwd
+BASEDIR=$(dirname "$0")
+# compile latex
+cd $BASEDIR
+
+rm -rf build-cv.log
+touch build-cv.log
+
+pdflatex -halt-on-error shin >> build-cv.log # compile latex
+for f in shin prep thes jrnl conf tech invt pres # compile bibtex
+do
+    bibtex $f  >> build-cv.log 
+    sed -i 's/S.~Shin/{\\bf S.~Shin}/g' $f.bbl # bold my name
+done
+pdflatex -halt-on-error shin >> build-cv.log  # compile with bibtex
+pdflatex -halt-on-error shin >> build-cv.log  # compile again
+cd $PWD
