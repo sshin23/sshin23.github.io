@@ -13,7 +13,7 @@ Several dependencies need to be installed to use this package.
 Once all the dependencies are obtained, run the following to instantiate the package:
 ```shell
 $ git clone git@github.com:sshin23/sshin23.github.io.git
-$ cd sshin23.github.io.git
+$ cd sshin23.github.io
 $ julia --project -e 'using Pkg; Pkg.instantiate()'
 ```
 
