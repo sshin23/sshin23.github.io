@@ -2,12 +2,14 @@
 
 This package is used for building and deploying website `sunghoshin.com`. 
 
+## Dependencies
 Several dependencies need to be installed to use this package.
 - [julia](https://julialang.org/)
 - [git](https://git-scm.com/)
 - [texlive](https://www.tug.org/texlive/)
 - [bibtex2html](https://github.com/backtracking/bibtex2html)
 
+## Usage
 Once all the dependencies are obtained, run the following to instantiate the package:
 ```shell
 $ git clone git@github.com:sshin23/sshin23.github.io.git
@@ -36,4 +38,4 @@ Finally, to deploy the built website to the deployment branch `gh-pages`, run th
 julia> ShinIO.deploy()
 ```
 
-That's it! If you encounter any issues or have any questions, please report an [issue](https://github.com/sshin23/sshin23.github.io/issues).
+That's it! If you encounter any issues, please [report an issue](https://github.com/sshin23/sshin23.github.io/issues).
