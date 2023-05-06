@@ -2,9 +2,6 @@ a {
     color: #0083c7;
     text-decoration: none;
 }
-tt {
-    font-family: 'Hack', monospace;
-}
 h1 {
     color: #0083c7;
 		font-weight: bold;
@@ -26,7 +23,6 @@ p{
 html, body {
     height: 100%;
     margin: 0px;
-    font-family: "Fira Sans";
     font-size: 11pt;
 }
 
