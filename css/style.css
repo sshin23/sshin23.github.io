@@ -32,6 +32,7 @@ html, body {
 
 .main-content {
 		margin-top: 15px;
+		margin-bottom: 15px;
 }
 .navbar {
   position: sticky;
