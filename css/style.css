@@ -3,7 +3,6 @@ a {
     text-decoration: none;
 }
 h1 {
-    color: #0083c7;
 		font-weight: bold;
     font-size: 20pt;
 }
@@ -58,7 +57,6 @@ html, body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    /* margin: 15px; */
     margin-bottom: 15px;
 }
 
