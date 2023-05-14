@@ -19,6 +19,10 @@ p{
 		margin-bottom: 15px;
 }
 
+ul {
+		padding-left: 20px;
+}
+
 html, body {
     height: 100%;
     margin: 0px;
