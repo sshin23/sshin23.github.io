@@ -13,6 +13,7 @@ const output_dir = joinpath(@__DIR__, "..", "build")
 
 const nav_items =  [
     "Home" => "/",
+    "Research" => "/research",
     "Publications" => "/publications",
     "News" => "/news",
 ]
@@ -23,6 +24,7 @@ const abbrvnames = [
 
 const contents = [
     "news.html",
+    "research.html",
 ]
 
 function cv()
@@ -46,7 +48,11 @@ function build(; build_cv = true)
     nav = nav_html(nav_items)
 
     # Write the index.html file
-    write_html(nav, read(joinpath(content_dir,"index.html"), String), output_dir)
+    index = replace(
+        read(joinpath(content_dir,"index.html"), String),
+        "{ recent news }" => five_news()
+    )    
+    write_html(nav, index, output_dir)
 
     # Write the publication.html file
     html_names = [
@@ -149,13 +155,22 @@ function serve()
     )
 end
 
+function commit(msg)
+    # Commit and push the changes
+    cd(@__DIR__) do
+        run(`git add -A`)
+        run(`git commit -m "$msg"`)
+        run(`git push`)
+    end
+end
+
 function deploy()
     # Define the repository URL and the branch to deploy to
     repo_url = "git@github.com:sshin23/sshin23.github.io.git"
     branch = "gh-pages"
 
     # Define the build directory
-    build_dir = "build"
+    build_dir = joinpath(@__DIR__,"..","build")
 
     # Clone the repository into a temporary directory
     tmp_dir = mktempdir()
@@ -175,6 +190,16 @@ function deploy()
 
     # Clean up the temporary directory
     rm(tmp_dir; recursive=true)
+end
+
+function five_news()
+    news = read(joinpath(@__DIR__,"..","content","news.html"),String)
+    items = [split(item, "</li>")[1] for item in split(news, "<li>")]
+    items = strip.(items[2:min(6,length(items))])
+    return """
+<ul>
+$(prod("<li>\n$item\n</li>\n" for item in items))</ul>
+"""    
 end
 
 end # module
