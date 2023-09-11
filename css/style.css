@@ -100,13 +100,13 @@ html, body {
 .home {
     width: 100%;
     height: auto; /* Maintain aspect ratio */
-    padding: 10px;
+    padding: 5px;
 }
 
 .research {
     width: 100%;
     height: auto; /* Maintain aspect ratio */
-    padding: 10px;
+    /* padding: 10px; */
 }
 
 .mit {
