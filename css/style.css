@@ -1,6 +1,10 @@
 a {
-    color: #0083c7;
+    color: #a21f34;
     text-decoration: none;
+}
+a:hover {
+    color: #a21f34;
+    text-decoration: underline;
 }
 h1 {
 		font-weight: bold;
@@ -42,10 +46,10 @@ html, body {
 }
 .wrapper {
     min-height: 100%;
-    margin-bottom: -50px;
+    margin-bottom: -70px;
 }
 .footer, .push {
-    height: 50px;
+    height: 70px;
 }
 .footer {
     background-color: #f5f5f5;
@@ -91,4 +95,26 @@ html, body {
 
 .profile-picture {
     width: 100%;
+}
+
+.home {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.research {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    /* padding: 10px; */
+}
+
+.mit {
+		color: #a21f34;
+}
+
+.logo {
+    max-height: 100px; /* Maintain aspect ratio */
+		max-width: 100%;
 }
