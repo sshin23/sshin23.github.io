@@ -1,6 +1,6 @@
 module ShinIO
 
-using LiveServer, BetterFileWatching
+using LiveServer
 
 const root_dir = joinpath(@__DIR__, "..")
 const content_dir = joinpath(root_dir, "content")
