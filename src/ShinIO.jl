@@ -215,7 +215,8 @@ function publication(f; names = String[], label="")
         result,
         (name => "<strong>$name</strong>" for name in names)...,
         "[<a name" =>"[$label<a name",
-        "<sup>*</sup>" => "*"
+        "<sup>*</sup>" => "*",
+        "http://arxiv.org/abs/arXiv:" => "https://arxiv.org/abs/",
     )
 end
 
