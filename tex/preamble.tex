@@ -11,6 +11,7 @@
 \usepackage{etaremune}
 \usepackage{enumitem}
 \usepackage[numbers]{natbib}
+
 \usepackage{xcolor,color}
 \usepackage[hyphens]{url}
 \urlstyle{same}
@@ -26,7 +27,7 @@
 
 %% bibliography with multiple entries
 \usepackage[resetlabels,labeled]{multibib}
-\newcites{thes,prep,undr,jrnl,conf,tech,invt,pres}{{ },{ },{ },{ },{ },{ },{ },{ }}
+\newcites{thes,prep,undr,jrnl,conf,tech,invt,pres,selected}{{ },{ },{ },{ },{ },{ },{ },{ },{ }}
 
 
 \usepackage{fancyhdr}
@@ -84,3 +85,9 @@
     } %Reducing spacing in the bibliography.
 \patchcmd{\@lbibitem}{\item[\hfil\NAT@anchor{#2}{\NAT@num}]}{\item}{}{}
 \makeatother
+
+\let\oldbibliography\thebibliography
+\renewcommand{\thebibliography}[1]{%
+  \oldbibliography{#1}%
+  \setlength{\itemsep}{0pt}%
+}

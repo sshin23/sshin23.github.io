@@ -108,7 +108,7 @@ function build(; build_cv = true, build_extra = true, clean = false)
     # setup the directory
     if clean
         rm(output_dir; recursive = true, force=true)
-        mkdir(output_dir)
+        mkpath(output_dir)
     end
     cp(joinpath(@__DIR__,"..","img"), joinpath(output_dir,"img"); force=true)
     cp(joinpath(@__DIR__,"..","css"), joinpath(output_dir,"css"); force=true)
