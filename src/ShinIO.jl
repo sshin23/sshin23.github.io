@@ -73,7 +73,7 @@ const nav_items =  [
     "Publications" => "/publications",
     "Software" => "/software",
     "News" => "/news",
-    "Join Us!" => "/positions", 
+    # "Join Us!" => "/positions", 
 ]
 
 const abbrvnames = [
