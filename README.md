@@ -1,6 +1,6 @@
 # ShinIO
 
-This package is used for building and deploying website [sunghoshin.com](sunghoshin.com). 
+This package is used for building and deploying website [shin.mit.edu](shin.mit.edu). 
 
 ## Dependencies
 Several dependencies need to be installed to use this package.
