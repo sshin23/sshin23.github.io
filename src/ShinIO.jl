@@ -72,6 +72,7 @@ const nav_items =  [
     "Research" => "/research",
     "Publications" => "/publications",
     "Software" => "/software",
+    "Facilities" => "/facilities",
     "News" => "/news",
     # "Join Us!" => "/positions", 
 ]
