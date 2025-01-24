@@ -4,10 +4,11 @@ This package is used for building and deploying website [shin.mit.edu](shin.mit.
 
 ## Dependencies
 Several dependencies need to be installed to use this package.
-- [julia](https://julialang.org/)
-- [git](https://git-scm.com/)
-- [texlive](https://www.tug.org/texlive/)
-- [bibtex2html](https://github.com/backtracking/bibtex2html)
+- julia
+- git
+- texlive
+- bibtex2html
+- pdf2svg
 
 ## Usage
 Once all the dependencies are obtained, run the following to instantiate the package:

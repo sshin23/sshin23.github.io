@@ -68,6 +68,7 @@ const WATCHDIR = [
 ]
 const nav_items =  [
     "Home" => "/",
+    "Values" => "/values",
     "People" => "/people",
     "Research" => "/research",
     "Publications" => "/publications",
@@ -109,8 +110,10 @@ function build(; build_cv = true, build_extra = true, clean = false)
     # setup the directory
     if clean
         rm(output_dir; recursive = true, force=true)
-        mkpath(output_dir)
     end
+    mkpath(output_dir)
+    mkpath(joinpath(output_dir,"img"))
+    mkpath(joinpath(output_dir,"css"))
     cp(joinpath(@__DIR__,"..","img"), joinpath(output_dir,"img"); force=true)
     cp(joinpath(@__DIR__,"..","css"), joinpath(output_dir,"css"); force=true)
     cp(joinpath(@__DIR__,"..","tex/shin.pdf"), joinpath(output_dir,"shin.pdf"); force=true)
