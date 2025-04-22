@@ -42,7 +42,9 @@
 \begin{document}
 \thispagestyle{empty}
 \begin{center}
+  % \vspace{-1em}
   {\bf\Large Sungho Shin}
+  % \vspace{-1em}
 \end{center}
 \begin{center}
   {Assistant Professor}, Department of Chemical Engineering, {Massachusetts Institute of Technology}\\
@@ -74,12 +76,12 @@
   Department of Chemical Engineering, Massachusetts Institute of Technology, Cambridge, MA  
 \item[] {\bf Postdoctoral Appointee} (Supervisor: Mihai Anitescu) \hfill 2021-2024\\
   Mathematics and Computer Science Division, Argonne National Laboratory, Lemont, IL
-\item[] {\bf Research Assistant} (Supervisor: Victor M. Zavala)\hfill 2016--2021\\
-  Department of Chemical and Biological Engineering , University of Wisconsin-Madison, Madison, WI 
-\item[] {\bf Research Intern} (Supervisors: Carleton Coffrin and Kaarthik Sundar) \hfill 2020\\
-  Advanced Network Science Initiative , Los Alamos National Laboratory, Los Alamos, NM  
-\item[] {\bf Research Intern} (Supervisor: Mihai Anitescu) \hfill 2018\\
-  Mathematics and Computer Science Division, Argonne National Laboratory, Lemont, IL
+% \item[] {\bf Research Assistant} (Supervisor: Victor M. Zavala)\hfill 2016--2021\\
+%   Department of Chemical and Biological Engineering , University of Wisconsin-Madison, Madison, WI 
+% \item[] {\bf Research Intern} (Supervisors: Carleton Coffrin and Kaarthik Sundar) \hfill 2020\\ 
+%   Advanced Network Science Initiative , Los Alamos National Laboratory, Los Alamos, NM  
+% \item[] {\bf Research Intern} (Supervisor: Mihai Anitescu) \hfill 2018\\
+%   Mathematics and Computer Science Division, Argonne National Laboratory, Lemont, IL
 \end{itemize}
 
 \subsection*{Honors and Awards}
@@ -105,15 +107,15 @@
 % \end{itemize}
 % \subsubsection*{Fellowships and Scholarships}
 % \begin{itemize}[leftmargin=*,itemsep=0pt]
-\item[] {\bf Grainger Wisconsin Distinguished Graduate Fellowship}, University of Wisconsin-Madison \hfill 2020--2021
+% \item[] {\bf Grainger Wisconsin Distinguished Graduate Fellowship}, University of Wisconsin-Madison \hfill 2020--2021
   % \begin{itemize}[topsep=0pt,label=$\bullet$,itemsep=-1pt]
   % \item Awarded to the distinguished graduate student with dissertator status
   % \end{itemize}
-\item[] {\bf Kwanjeong Scholarship}, Kwanjeong Educational Foundation \hfill 2016--2020
+% \item[] {\bf Kwanjeong Scholarship}, Kwanjeong Educational Foundation \hfill 2016--2020
   % \begin{itemize}[topsep=0pt,label=$\bullet$,itemsep=-1pt]
   % \item Awarded to outstanding Korean students who have gained admission to widely recognized universities
   % \end{itemize}
-\item[] {\bf Korea Presidential Science Scholarship}, Korea Student Aid Foundation \hfill 2010--2016
+% \item[] {\bf Korea Presidential Science Scholarship}, Korea Student Aid Foundation \hfill 2010--2016
   % \begin{itemize}[topsep=0pt,label=$\bullet$,itemsep=-1pt]
   % \item Prestigious merit-based scholarship the aim of which is to select and support top talents with great creativity and potential in the fields of science and technology
   % \end{itemize}
@@ -211,13 +213,25 @@
 % \end{itemize}
 
 % \subsection*{Professional Affiliations}
-% AIChE; IEEE; INFORMS; SIAM
-% \let\OLDthebibliography\thebibliography
-% \renewcommand\thebibliography[1]{
-%   \OLDthebibliography{#1}
-%   \setlength{\parskip}{0pt}
-%   \setlength{\itemsep}{0pt}
-% }
+% \begin{itemize}[itemsep=1pt, parsep=0pt,leftmargin=*]
+% \item[] {\bf American Institute of Chemical Engineers} (AIChE)
+%   % \hfill Member \#: 009902263671
+% \item[] {\bf Institute of Electrical and Electronics Engineers} (IEEE)
+%   % \hfill Member \#: 95641446
+% \item[] {\bf Institute for Operations Research and the Management Sciences} (INFORMS)
+%   % \hfill Member \#: 
+% \item[] {\bf Society for Industrial and Applied Mathematics} (SIAM)
+% \item[] {\bf Mathematical Optimization Society} (MOS)
+% \item[] {\bf International Federation of Automatic Control} (IFAC)
+%   % \hfill Member \#: 020881781
+% \end{itemize}
+
+\let\OLDthebibliography\thebibliography
+\renewcommand\thebibliography[1]{
+  \OLDthebibliography{#1}
+  \setlength{\parskip}{0pt}
+  \setlength{\itemsep}{0pt}
+}
 
 \subsection*{Selected Publications}
 \renewcommand*{\labelenumi}{[P\theenumi]} 
@@ -225,7 +239,7 @@
 \nociteselected{*}
 \bibliographystyleselected{custom}
 \bibliographyselected{../bib/selected} 
-
+% \subsection*{Publications}
 % \subsubsection*{Preprints}
 % \renewcommand*{\labelenumi}{[P\theenumi]}
 % \nociteprep{*}
@@ -241,11 +255,11 @@
 % \nociteconf{*}
 % \bibliographystyleconf{custom}
 % \bibliographyconf{../bib/conf}
-% \subsubsection*{Book Chapters, Technical Reports, and Others}
-% \renewcommand*{\labelenumi}{[B\theenumi]}
-% \nocitetech{*}
-% \bibliographystyletech{custom}
-% \bibliographytech{../bib/tech}
+% % \subsubsection*{Book Chapters, Technical Reports, and Others}
+% % \renewcommand*{\labelenumi}{[B\theenumi]}
+% % \nocitetech{*}
+% % \bibliographystyletech{custom}
+% % \bibliographytech{../bib/tech}
 % \subsubsection*{Thesis}
 % \renewcommand*{\labelenumi}{[T\theenumi]}
 % \nocitethes{*}
@@ -253,28 +267,36 @@
 % \bibliographythes{../bib/thes}
 
 % \subsection*{Presentations}
+% \subsubsection*{Invited Talks}
+% \renewcommand*{\labelenumi}{[I\theenumi]}
+% \nociteinvt{*}
+% \bibliographystyleinvt{custom}
+% \bibliographyinvt{../bib/invt}
 
-\subsection*{Grants}
-\begin{itemize}[itemsep=1pt, parsep=0pt,leftmargin=*]
-\item PI. Multi-Scale Production Cost Modeling for Optimal Storage Investment. MIT Energy Initiative. Total \$304,524. 2024-2025.
-\item PI. Analyzing the Ripple Effect of Consumer Flexibility on Utility Scale Energy System Investments. EQUINOR. Total \$100,000. 2024-2025.
-\end{itemize}
+% \subsection*{Grants}
+% \begin{itemize}[itemsep=1pt, parsep=0pt,leftmargin=*]
+% \item[] PI. Multi-Scale Production Cost Modeling for Optimal Storage Investment. MIT Energy Initiative. Total \$304,524. 2024-2025.
+% \item[] PI. Analyzing the Ripple Effect of Consumer Flexibility on Utility Scale Energy System Investments. EQUINOR. Total \$100,000. 2024-2025.
+% \item[] PI. Optimal Utilization Strategies of Utility-Scale Battery Storage: Slowing Down Degradation in the Face of Complex Physics and Uncertainties. MIT Energy Initiative. Total \$150,000. 2024-2026.
+% \item[] PI. Characterizing the Trade-Off between CO2 Capture Rate and Energy Efficiency in Amine-Based Carbon Capture under Variable Feed Conditions. Total \$250,000. 2025-2027.
+% \end{itemize}
 
-\subsection*{Software Products}
-\begin{enumerate}[itemsep=1pt, parsep=0pt]
-\renewcommand*{\labelenumi}{[S\theenumi]}
-\item {\bf \href{https://github.com/MadNLP/MadNLP.jl}{MadNLP.jl}} (Main developer): a nonlinear programming solver for GPUs
-\item {\bf \href{https://github.com/exanauts/ExaModels.jl}{ExaModels.jl}} (Main developer): an algebraic modeling system for GPUs.
-\item {\bf \href{https://github.com/plasmo-dev/Plasmo.jl}{Plasmo.jl}} (Main developer): a graph-based modeling platform.
-\end{enumerate}
+% \subsection*{Software Products}
+% \begin{enumerate}[itemsep=1pt, parsep=0pt]
+% \renewcommand*{\labelenumi}{[S\theenumi]}
+% \item {\bf \href{https://github.com/MadNLP/MadNLP.jl}{MadNLP.jl}} (Main developer): a nonlinear programming solver for GPUs
+% \item {\bf \href{https://github.com/exanauts/ExaModels.jl}{ExaModels.jl}} (Main developer): an algebraic modeling system for GPUs.
+% \item {\bf \href{https://github.com/plasmo-dev/Plasmo.jl}{Plasmo.jl}} (Main developer): a graph-based modeling platform.
+% \end{enumerate}
 
 \subsection*{Synergetic Activities}
 
 \begin{itemize}[itemsep=1pt, parsep=0pt,leftmargin=*]
-\item Contributed to conference organization, including organizer of "accelerated computing for mathematical programming" session at INFORMS Annual Meeting (2024), International Program Committee of IFAC NMPC Conference (2024), and session reviewer and chair of AIChE CAST Division (2022, 2024).
-\item Served as journal reviewer, including IEEE Transactions on Automatic Control, Automatica, and SIAM Journal on Optimization, and many others.
-\item Given several invited seminars, including Los Alamos National Laboratory (2024), Oklahoma State University (2024), Purdue University (2024), AIChE CAST Webinar series (2024), Grid Science Winter School and Conference (2023), Seoul National University (2023, 2022), Trier University (2021), Caltech (2021), University of Bayrueth (2020)
-\item Contributed department activities at MIT to promote diversity in the field, including Rising Stars in Chemical Engineering (2024).
+\item[] \textbf{Conference session organization}: Organized ``accelerated computing for mathematical programming'' session at INFORMS Annual Meeting (2024)
+  % , International Program Committee of IFAC NMPC Conference (2024), and session reviewer and chair of AIChE CAST Division (2022, 2024).
+% \item Served as journal reviewer, including IEEE Transactions on Automatic Control, Automatica, and SIAM Journal on Optimization, and many others.
+\item[] \textbf{Invited Seminars}: Given several invited seminars about ``Nonlinear optimization on GPUs'', including Los Alamos National Laboratory (2024), Oklahoma State University (2024), Purdue University (2024), AIChE CAST Webinar series (2024), General Electric (2024), Hitach Energy (2024)
+% % \item Contributed department activities at MIT to promote diversity in the field, including Rising Stars in Chemical Engineering (2024). 
 \end{itemize}
 % \renewcommand*{\labelenumi}{[I\theenumi]}
 % \nociteinvt{*}
@@ -292,8 +314,13 @@
 % \subsection*{References}
 % \begin{itemize}[leftmargin=*]
 % \item[] Provided upon request.
-% \end{itemize}
+% \end{itemize} 
 
 % {\noindent\it Last updated: \today}
 
 \end{document}
+
+%%% Local Variables:
+%%% mode: LaTeX
+%%% TeX-master: t
+%%% End:
