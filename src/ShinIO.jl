@@ -1,6 +1,6 @@
 module ShinIO
 
-using LiveServer
+using LiveServer, Git
 
 const root_dir = joinpath(@__DIR__, "..")
 const content_dir = joinpath(root_dir, "content")
@@ -233,9 +233,9 @@ end
 function commit(msg)
     # Commit and push the changes
     cd(@__DIR__) do
-        run(`git add -A`)
-        run(`git commit -m "$msg"`)
-        run(`git push`)
+        run(`$(git()) add -A`)
+        run(`$(git()) commit -m "$msg"`)
+        run(`$(git()) push`)
     end
 end
 
@@ -249,7 +249,7 @@ function deploy()
 
     # Clone the repository into a temporary directory
     tmp_dir = mktempdir()
-    run(`git clone --depth 1 --branch $branch $repo_url $tmp_dir`)
+    run(`$(git()) clone --depth 1 --branch $branch $repo_url $tmp_dir`)
 
     # Copy the contents of the build directory to the repository directory
     for f in readdir(build_dir, join=true)
@@ -258,9 +258,9 @@ function deploy()
 
     # Commit and push the changes
     cd(tmp_dir) do
-        run(`git add -A`)
-        run(`git commit -m "Deploy website"`)
-        run(`git push origin $branch`)
+        run(`$(git()) add -A`)
+        run(`$(git()) commit -m "Deploy website"`)
+        run(`$(git()) push origin $branch`)
     end
 
     # Clean up the temporary directory
