@@ -81,24 +81,72 @@ const nav_items =  [
 const abbrvnames = [
     "S. Shin"
 ]
+const dependencies = [
+    "bibtex2html",
+    "pdflatex",
+    "pdf2svg",
+]
+const bibfiles = [
+    "prep", "thes", "jrnl", "conf", "tech", "invt", "pres"
+]
+const figfiles = [
+    "fig-1",
+    "fig-2",
+    "fig-3",
+    "fig-4",
+]
 
-# const contents = [
-#     "index.html",
-#     "news.html",
-#     "research.html",
-#     "people.html",
-#     "positions.html",
-#     "software.html",
-# ]
+const PDFLATEX = `pdflatex -halt-on-error`
+const BIBTEX = `bibtex -terse`
+const BIBTEX2HTML = `bibtex2html`
+const PDF2SVG = `pdf2svg`
+
+function __init__()
+    for dep in dependencies
+        try run(`which $dep`, stdin, devnull, stderr)
+        catch e
+            @error "Dependency $dep is not installed. Please install it to build the website."
+            return
+        end
+    end    
+end
 
 function cv()
     @info "building CV"
-    run(`$(joinpath(tex_dir,"build-cv"))`)
+    curdir = @__DIR__
+
+    cd(tex_dir)
+    run(`$PDFLATEX shin`, stdin, devnull, stderr)
+    for f in bibfiles
+        try
+            run(`$BIBTEX $f`, stdin, devnull, stderr)
+        catch e
+        end
+        
+        write(
+            joinpath(tex_dir, "$f.bbl"),
+            replace(
+                read(joinpath(tex_dir, "$f.bbl"), String),
+                "S. Shin" => "{\\bf S. Shin}"
+            )
+        )
+    end
+    run(`$PDFLATEX shin`, stdin, devnull, stderr)
+    run(`$PDFLATEX shin`, stdin, devnull, stderr)
+    cd(curdir)
 end
 
 function extra()
     @info "building Extra"
-    run(`$(joinpath(extra_dir,"build-extra"))`)
+    curdir = @__DIR__
+
+    cd(extra_dir)
+    for f in figfiles
+        run(`$PDFLATEX $f`, stdin, devnull, stderr)
+        run(`$PDF2SVG $f.pdf $f.svg`, stdin, devnull, stderr)
+        cp(joinpath(extra_dir, "$f.pdf"), joinpath(img_dir, "$f.pdf"); force=true)
+    end
+    cd(curdir)
 end
 
 function build(; build_cv = true, build_extra = true, clean = false)
@@ -210,7 +258,7 @@ end
 function publication(f; names = String[], label="")
     path = tempname()
     output = path * ".html"
-    run(`bibtex2html -nf pdf pdf -nf youtube YouTube -nf proquest ProQuest -nf preprint preprint -q -r -s abbrv -revkeys -nodoc -nofooter -nobibsource -o $path $f`)
+    run(`$BIBTEX2HTML -nf pdf pdf -nf youtube YouTube -nf proquest ProQuest -nf preprint preprint -q -r -s abbrv -revkeys -nodoc -nofooter -nobibsource -o $path $f`)
     result = read(output, String)
     rm(output; force = true)
 
@@ -253,7 +301,7 @@ function deploy()
 
     # Copy the contents of the build directory to the repository directory
     for f in readdir(build_dir, join=true)
-        run(`cp -r $f $tmp_dir`)
+        cp(joinpath(build_dir, f), tmp_dir; force=true)
     end
 
     # Commit and push the changes
