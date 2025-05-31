@@ -144,7 +144,7 @@ function extra()
     for f in figfiles
         run(`$PDFLATEX $f`, stdin, devnull, stderr)
         run(`$PDF2SVG $f.pdf $f.svg`, stdin, devnull, stderr)
-        cp(joinpath(extra_dir, "$f.pdf"), joinpath(img_dir, "$f.pdf"); force=true)
+        cp(joinpath(extra_dir, "$f.svg"), joinpath(img_dir, "$f.svg"); force=true)
     end
     cd(curdir)
 end
